@@ -74,12 +74,5 @@ I'm currently open to **Java Developer** opportunities in **Dubai/Abu Dhabi**.
 
 ---
 
-Thanks for stopping by! Feel free to reach out for collaboration, feedback, or job opportunities.
 
-
-
-📎 [LinkedIn](www.linkedin.com/in/yuvaranianbu)  
-📧 Email: yuvaranianbu27@gmail.com
-
----
 
