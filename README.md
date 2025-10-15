@@ -63,10 +63,20 @@ Genie is built for professionals who want to save time without sacrificing tone.
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to improve.
 
-## 📫 Contact
-#### 🙌 Built with 💙 by Yuvarani
+## 📫 Let’s Connect
 
-Currently seeking **Java Developer roles** in **Dubai/Abu Dhabi**
+I'm currently open to **Java Developer** opportunities in **Dubai/Abu Dhabi**.
+
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/yuvaranianbu)  
+[![Email](https://img.shields.io/badge/GMAIL-yuvaranianbu27@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:yuvaranianbu27@gmail.com)
+
+🔗 **Project Repository**: [YR-Store on GitHub](https://github.com/yuvaranianbu27/YR-Store)
+
+---
+
+Thanks for stopping by! Feel free to reach out for collaboration, feedback, or job opportunities.
+
+
 
 📎 [LinkedIn](www.linkedin.com/in/yuvaranianbu)  
 📧 Email: yuvaranianbu27@gmail.com
