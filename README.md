@@ -27,7 +27,7 @@ A visual walkthrough of how Email Reply Genie works:
 ### 1️⃣ Home Screen
 User lands on the homepage.
 
-<img src="./assets/flow-1-home.png" alt="Home Screen" width="600"/>
+<img src="./assets/flow-1-home.png" alt="Home Screen" width="750"/>
 
 ---
 ### 2️⃣ Inbox — Enter Email Content
