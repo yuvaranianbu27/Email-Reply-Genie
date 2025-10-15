@@ -21,6 +21,40 @@ Email Reply Genie helps users generate thoughtful, context-sensitive replies to 
 - ⚙️ Backend developed using **Java + Spring Boot**
 - 📮 REST endpoint: `/api/email/generate`
 
+## 🔄 Project Flow
+A visual walkthrough of how Email Reply Genie works:
+
+### 1️⃣ Home Screen
+User lands on the homepage.
+
+<img src="./assets/flow-1-home.png" alt="Home Screen" width="600"/>
+
+---
+### 2️⃣ Inbox — Enter Email Content
+User pastes or types the email they want to reply to.
+
+<img src="./assets/inbox.png" alt="Inbox Entry" width="600"/>
+
+---
+
+### 3️⃣ Select Tone
+Choose the desired tone: professional, casual, or friendly.
+
+<img src="./assets/select-tone.png" alt="Tone Selection" width="600"/>
+
+---
+
+### 4️⃣ AI-Generated Reply
+Genie crafts a smart, context-aware response.
+
+<img src="./assets/reply.png" alt="Generated Reply" width="600"/>
+
+---
+
+### 5️⃣ Copy to Clipboard
+Click to copy the reply and paste it into your email client.
+
+<img src="./assets/copy.png" alt="Copy Reply" width="600"/>
 
 
 ## 💡 Vision
