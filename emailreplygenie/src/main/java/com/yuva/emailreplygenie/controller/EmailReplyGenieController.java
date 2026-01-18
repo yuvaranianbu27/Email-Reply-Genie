@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/email")
 @CrossOrigin(origins = "http://localhost:5173")
 public class EmailReplyGenieController {  private final EmailReplyGenieService emailService;
+      System.out.println();
 
     public EmailReplyGenieController(EmailReplyGenieService emailService) {
         this.emailService = emailService;
@@ -17,5 +18,6 @@ public class EmailReplyGenieController {  private final EmailReplyGenieService e
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
         String response = emailService.generateEmailReply(emailRequest);
         return ResponseEntity.ok(response);
+
     }
 }
