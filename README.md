@@ -1,78 +1,102 @@
-# 🤖 Email Reply Genie
-An AI-powered assistant that crafts smart, tone-aware email replies with a touch of magic.
+# Email Reply Genie
 
-## 🔹 Overview
-Email Reply Genie helps users generate thoughtful, context-sensitive replies to incoming emails using AI. Whether you're responding to clients, colleagues, or support tickets, Genie adapts the tone and delivers polished responses instantly.
+**Generate a draft email reply from email text and an optional tone.**
 
-## 🧠 Key Features
+Email Reply Genie pairs a React and Material UI interface with a Java Spring Boot API. The backend sends the supplied email content and optional tone to the configured Google Gemini API and returns the generated reply as text.
 
-- ✍️ **AI-generated replies** based on original email content  
-- 🎭 **Tone customization** — choose professional, casual, or friendly  
-- 📋 **Copy-to-clipboard** for fast email workflows  
-- ⚡ **Responsive design** built with React + Material UI  
-- 🔗 **Backend integration** via REST API (Spring Boot)  
-- 📮 **Returns**: AI-generated reply as plain text  
-- 🧱 **Modular design** for easy integration with OpenAI or other LLMs  
+## Features
 
-## 🖼️ Tech Stack
+- Enter or paste the email you want to answer.
+- Choose an optional professional, casual, or friendly tone.
+- Generate a reply and copy it to the clipboard.
+- View the flow in the included screenshots:
 
-- 🧩 Frontend built with **React** and **Material UI**
-- 🔗 **Axios-powered** API calls to the backend
-- ⚙️ Backend developed using **Java + Spring Boot**
-- 📮 REST endpoint: `/api/email/generate`
+| Home | Enter email | Choose tone |
+| --- | --- | --- |
+| ![Home screen](./assets/home.png) | ![Email input](./assets/inbox.png) | ![Tone selection](./assets/select-tone.png) |
 
-## 🔄 Project Flow
-A visual walkthrough of how Email Reply Genie works:
+| Generated reply | Copy reply |
+| --- | --- |
+| ![Generated reply](./assets/reply.png) | ![Copy reply](./assets/copy.png) |
 
-### 1️⃣ Home Screen
-User lands on the homepage.
+## Architecture
 
-<img src="./assets/home.png" alt="Home Screen" width="750"/>
+```text
+React + Vite UI  ── POST /api/email/generate ──>  Spring Boot API  ──>  Gemini API
+```
 
----
-### 2️⃣ Inbox — Enter Email Content
-User pastes or types the email they want to reply to.
+The API accepts JSON with `emailContent` and an optional `tone`:
 
-<img src="./assets/inbox.png" alt="Inbox Entry" width="600"/>
+```json
+{
+  "emailContent": "Could you share an update on the project?",
+  "tone": "professional"
+}
+```
 
----
+The endpoint is `POST /api/email/generate`. The current UI sends requests to `http://localhost:8080`.
 
-### 3️⃣ Select Tone
-Choose the desired tone: professional, casual, or friendly.
+## Technology
 
-<img src="./assets/select-tone.png" alt="Tone Selection" width="600"/>
+- **Backend:** Java 21, Spring Boot 3, Spring Web / WebFlux, WebClient
+- **Frontend:** React 19, Vite 7, Material UI, Axios
+- **AI integration:** Google Gemini API
 
----
+## Run locally
 
-### 4️⃣ AI-Generated Reply
-Genie crafts a smart, context-aware response.
+Prerequisites: Java 21, Node.js, and npm.
 
-<img src="./assets/reply.png" alt="Generated Reply" width="600"/>
+### 1. Configure the backend
 
----
+Set the Gemini API endpoint and API key as environment variables. Keep the API key private; do not commit it.
 
-### 5️⃣ Copy to Clipboard
-Click to copy the reply and paste it into your email client.
+```powershell
+$env:GEMINI_API_URL = "your Gemini API endpoint"
+$env:GEMINI_API_KEY = "your API key"
+cd emailreplygenie
+.\mvnw.cmd spring-boot:run
+```
 
-<img src="./assets/copy.png" alt="Copy Reply" width="600"/>
+The backend starts on Spring Boot’s default port `8080`.
 
+### 2. Start the frontend
 
-## 💡 Vision
-Genie is built for professionals who want to save time without sacrificing tone. It’s fast, intuitive, and brandable—perfect for support teams, freelancers, and anyone who lives in their inbox.
+In a second terminal:
 
-## 🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to improve.
+```powershell
+cd emailreplygenie-ui
+npm install
+npm run dev
+```
 
-## 📫 Let’s Connect
+Open the Vite URL printed in the terminal (typically `http://localhost:5173`). The backend currently allows the local Vite origin for cross-origin requests.
 
-I'm currently open to **Java Developer** opportunities in **Dubai/Abu Dhabi**.
+On macOS or Linux, use `./mvnw` instead of `.\mvnw.cmd`.
 
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/yuvaranianbu)  
-[![Email](https://img.shields.io/badge/GMAIL-yuvaranianbu27@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:yuvaranianbu27@gmail.com)
+## Build and checks
 
-🔗 **Project Repository**: [Email-Reply-Genie on GitHub](https://github.com/yuvaranianbu27/Email-Reply-Genie)
+```powershell
+cd emailreplygenie-ui
+npm run lint
+npm run build
+```
 
----
+In the backend directory, run `.\mvnw.cmd test`.
 
+## Repository layout
 
+- `emailreplygenie/` — Spring Boot API.
+- `emailreplygenie-ui/` — React and Vite frontend.
+- `assets/` — screenshots used in this README.
 
+## Known limitations
+
+- The frontend currently targets a local backend URL; configure it for your deployment before hosting the UI elsewhere.
+- Review generated text before sending it. Do not submit confidential or sensitive email content unless your privacy requirements allow it.
+- Add production-ready request validation, error handling, and deployment configuration before exposing the API publicly.
+
+## Links
+
+- [GitHub repository](https://github.com/yuvaranianbu27/Email-Reply-Genie)
+- [LinkedIn](https://www.linkedin.com/in/yuvaranianbu)
+- [Email](mailto:yuvaranianbu27@gmail.com)

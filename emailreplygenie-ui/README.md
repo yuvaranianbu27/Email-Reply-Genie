@@ -1,18 +1,27 @@
-# React + Vite
+# Email Reply Genie UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React frontend for [Email Reply Genie](../README.md). It lets a user enter email text, select an optional tone, request a draft reply from the Spring Boot API, and copy the result.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js and npm.
+- The Spring Boot backend running at `http://localhost:8080`.
 
-## React Compiler
+## Start the development server
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```powershell
+npm install
+npm run dev
+```
 
-Note: This will impact Vite dev & build performances.
+Open the local URL printed by Vite (usually `http://localhost:5173`). The current UI posts to `http://localhost:8080/api/email/generate`; run the backend separately.
 
-## Expanding the ESLint configuration
+## Other commands
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```powershell
+npm run lint
+npm run build
+npm run preview
+```
+
+The repository-level README documents backend configuration, the API request shape, and screenshots.
